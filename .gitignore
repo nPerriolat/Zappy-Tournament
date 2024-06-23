@@ -1,0 +1,9 @@
+##
+## .gitignore for Zappy Tournament Script
+##
+
+# Executables
+zts
+
+### Python ###
+__pycache__

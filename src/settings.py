@@ -33,7 +33,12 @@ class Settings:
         header_case(width)
         body_case(width, "ZAPPY TOURNAMENT SETTINGS", YELLOW)
         body_case(width, "")
-        body_case(width, f"Socket address: {self.hostname}:{self.port}")
+        if 0 < self.port:
+            body_case(width, f"Socket address: {self.hostname}:{self.port}")
+        else:
+            body_case(width, f"Socket address: {self.hostname}:{self.port}", RED)
+            self.is_ready = False
+        body_case(width, "")
         if 2 <= len(self.teams):
             body_case(width, f"Number of teams: {len(self.teams)}")
         else:
