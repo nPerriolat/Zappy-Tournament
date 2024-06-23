@@ -17,6 +17,8 @@ def help():
     print("\t-y\tTo set the map's length")
     print("\t-c\tTo set the starting eggs per teams")
     print("\t-f\tTo set the server's frequence")
+    print("\t-w\tTo set the number of win needed to win a duel")
+    print("\t-o\tTo set the timeout condition in minutes")
     exit(0)
 
 # Parse arguments and handle arguments errors
@@ -74,6 +76,18 @@ def parsing(argv):
                     settings.frequence = int(argv[i + 1])
                 except:
                     print("Invalid frequence, abort.")
+                    exit(1)
+            case "-w":
+                try:
+                    settings.needed_wins = int(argv[i + 1])
+                except:
+                    print("Invalid number of win, abort.")
+                    exit(1)
+            case "-o":
+                try:
+                    settings.timeout = int(argv[i + 1])
+                except:
+                    print("Invalid timeout condition, abort.")
                     exit(1)
             case _:
                 print("Invalid flag, abort.")
