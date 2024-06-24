@@ -15,4 +15,5 @@ if __name__ == "__main__":
         print("You've choosed to refuse the above settings, abort.")
         exit(0)
     print(f"{YELLOW}The tournament simulation is about to start. Please make sure this processus will not be interupted.{BLANK}")
+    # Tournament
     exit(0)
