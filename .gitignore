@@ -5,5 +5,8 @@
 # Executables
 zts
 
+### Test ###
+ai/team*
+
 ### Python ###
 __pycache__

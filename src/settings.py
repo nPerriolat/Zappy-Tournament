@@ -47,11 +47,17 @@ class Settings:
             self.is_ready = False
         body_case(width, "List of registered teams:")
         for team in self.teams:
-            if team != "GRAPHIC":
-                body_case(width, f" - {team}")
-            else:
-                body_case(width, f" - {team}", RED)
-                self.is_ready = False
+            if team != "GRAPHIC" and team in os.listdir("./ai"):
+                try:
+                    if os.system(f"(cd ./ai/{team} && make install 2>&1 1>/dev/null && make 2>&1 1>/dev/null)") == 0:
+                        if "zappy_ai" in os.listdir(f"./ai/{team}"):
+                            if os.access(f"./ai/{team}/zappy_ai", os.X_OK):
+                                body_case(width, f" - {team}")
+                                continue
+                except:
+                    pass
+            body_case(width, f" - {team}", RED)
+            self.is_ready = False
         body_case(width, "")
         body_case(width, "Server settings:")
         if 10 <= self.x <= 30 and 10 <= self.y <= 30:
