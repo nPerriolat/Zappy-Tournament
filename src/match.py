@@ -38,10 +38,12 @@ def monitor_output(process, stop_event, output_storage, settings):
         return
     sock.send("GRAPHIC\n".encode())
     while not stop_event.is_set():
-        listen = sock.recv(1024).decode()
+        try:
+            listen = sock.recv(1024).decode()
+        except UnicodeDecodeError:
+            break
         if listen:
             if re.search("seg .*\n", listen):
-                print(listen)
                 output_storage.append(listen.strip())
                 stop_event.set()
         if process.poll() is not None:
@@ -106,5 +108,4 @@ class Match:
         winner = "Equality"
         if output_storage:
             winner = output_storage[0].split(" ")[1]
-            print(f"Winner: {winner}")
         return Result(self.teamA, self.teamB, winner, elapsed)
