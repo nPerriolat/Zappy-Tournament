@@ -12,9 +12,7 @@ class Result:
         self.time = time
     
     def display(self):
-        print(f"{self.teamA} VS {self.teamB}")
-        print(f"winner: {self.winner}")
-        print(f"time: {time.strftime("%Mmin %Ss", time.gmtime(self.time))}")
+        return f"Match {self.teamA} VS {self.teamB} winner {self.winner} in {time.strftime("%Mmin %Ss", time.gmtime(self.time))}\n"
 
 class Duel:
     def __init__(self, teamA : str, teamB : str, settings : Settings):
@@ -50,6 +48,9 @@ class Duel:
         if team == self.scores[0][0]:
             return self.scores[0][2]
         return self.scores[1][2]
+    
+    def display(self):
+        return f"Duel {self.scores[0][0]} VS {self.scores[1][0]} winner {self.winner}\n"
 
 class ScoreBoard:
     def __init__(self, settings : Settings):
@@ -81,8 +82,9 @@ class ScoreBoard:
                     self.scores[last_pos], self.scores[i] = self.scores[i], self.scores[last_pos]
                     is_sorted = False
                 i += 1
-        print("Results:")
+        output = ["=====================================","Results:"]
         i = 1
         for team in self.scores:
-            print(f"{i}) {team[0]} score={team[1]} average_time={time.strftime("%Mmin %Ss", time.gmtime(team[2] / (len(self.scores) - 1)))}")
+            output.append(f"{i}) {team[0]} score={team[1]} average_time={time.strftime("%Mmin %Ss", time.gmtime(team[2] / (len(self.scores) - 1)))}")
             i += 1
+        return "\n".join(output)
