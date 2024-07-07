@@ -1,0 +1,6 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.testing.cwd": "${workspaceFolder}/zappy_ai/tests",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

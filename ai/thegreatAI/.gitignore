@@ -1,0 +1,7 @@
+.DS_Store
+binaries
+.vscode
+test
+my_push.sh
+todo.md
+zappy_*

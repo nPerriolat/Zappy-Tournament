@@ -1,0 +1,48 @@
+##
+## EPITECH PROJECT, 2023
+## zappy [Dev Container: zappy_docker @ unix:///run/user/1002/docker.sock]
+## File description:
+## Constants.py
+##
+
+"""
+@file Constants.py
+This file is used to store all the constants of the project that may be changed via Reinforcement Learning
+to ensure the correct threashold are met.
+"""
+
+FOOD_MULTIPLIER = 126
+INITIAL_FOOD = FOOD_MULTIPLIER * 10
+
+ABANDON_THRESHOLD_FOOD = 4 * FOOD_MULTIPLIER
+INCANTATION_ABANDON_THRESHOLD_FOOD = 5 * FOOD_MULTIPLIER
+INCANTATION_MIN_FOOD = 30 * FOOD_MULTIPLIER
+BALANCE_FOOD_MASTER_BIAS = 10 * FOOD_MULTIPLIER
+
+# compiled on ref
+# READY_MAX_THRESHOLD = 12 * FOOD_MULTIPLIER
+READY_MAX_THRESHOLD = 16 * FOOD_MULTIPLIER
+
+# compiled on server
+# READY_MAX_THRESHOLD = 15 * FOOD_MULTIPLIER
+
+# not compiled on ref
+# READY_MAX_THRESHOLD = 12 * FOOD_MULTIPLIER
+
+# not compiled on server
+# READY_MAX_THRESHOLD = 18 * FOOD_MULTIPLIER
+
+ABSOLUTE_MIN_FOOD_THRES_INCANTATION = 7 * FOOD_MULTIPLIER
+ABSOLUTE_MIN_FOOD_THRES_RANDOM_RESOURCES = 2 * FOOD_MULTIPLIER
+NB_TIME_PICK_RANDOM_RESOURCES = 3
+
+MAX_NB_RESOURCES = 6
+
+PLAYER_DENSITY_THRESHOLD = 4
+PLAYER_DENSITY_INCR = 1
+PLAYER_DENSITY_DECR = 0.1
+
+MASTER_MIN_FORKS = 5
+
+MOVE_TO_ME_CLOCK_FOLLOW = 10
+HAS_TROLL = True

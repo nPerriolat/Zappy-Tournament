@@ -1,0 +1,4 @@
+/home/pnils/Téléchargements/teams/team6/build/CMakeFiles/zappy_ai.dir
+/home/pnils/Téléchargements/teams/team6/build/CMakeFiles/zappy_ai_tests.dir
+/home/pnils/Téléchargements/teams/team6/build/CMakeFiles/edit_cache.dir
+/home/pnils/Téléchargements/teams/team6/build/CMakeFiles/rebuild_cache.dir

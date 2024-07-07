@@ -49,11 +49,12 @@ class Settings:
         for team in self.teams:
             if team != "GRAPHIC" and team in os.listdir("./ai"):
                 try:
-                    if os.system(f"(cd ./ai/{team} && make install 2>&1 1>/dev/null && make 2>&1 1>/dev/null)") == 0:
-                        if "zappy_ai" in os.listdir(f"./ai/{team}"):
-                            if os.access(f"./ai/{team}/zappy_ai", os.X_OK):
-                                body_case(width, f" - {team}")
-                                continue
+                    #if os.system(f"(cd ./ai/{team} && make > /dev/null 2>&1)") == 0:
+                    os.system(f"(cd ./ai/{team} && make > /dev/null 2>&1)")
+                    if "zappy_ai" in os.listdir(f"./ai/{team}"):
+                        if os.access(f"./ai/{team}/zappy_ai", os.X_OK):
+                            body_case(width, f" - {team}")
+                            continue
                 except:
                     pass
             body_case(width, f" - {team}", RED)
